@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root   #你本地的数据库用户名
+    password: 123456 #你本地的数据库密码
+    url: jdbc:mysql://localhost:3306/studb?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+  mvc:
+    servlet:
+      multipart:
+        enabled: true
+        max-file-size: 100MB #设置单个文件最大大小为10MB
+        max-request-size: 1000MB #设置多个文件大小为1000MB
+
+# 配置mybatis实体和xml映射
+mybatis:
+  mapper-locations: classpath:com.phoebe.mapper/*.xml
+  type-aliases-package: com.phoebe.entity
+
+#配置分页查询
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
