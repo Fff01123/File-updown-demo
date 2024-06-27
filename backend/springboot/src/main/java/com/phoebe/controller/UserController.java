@@ -22,6 +22,7 @@ public class UserController {
      * 也可以指定请求方式：GET POST PUT DELETE
      * @return
      */
+
     @Autowired
     private UserService userService;
 

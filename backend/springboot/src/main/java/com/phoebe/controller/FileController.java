@@ -26,16 +26,19 @@ public class FileController {
      */
     @PostMapping("/upload")
     public Result upload(MultipartFile file) {
+        //类级别的同步锁，确保在多线程环境下对FileController类的实例方法进行同步处理，避免并发访问导致的问题。
         synchronized (FileController.class) {
-            String flag = System.currentTimeMillis() + "";
-            String fileName = file.getOriginalFilename();
+            String flag = System.currentTimeMillis() + "";  //获取时间戳
+            String fileName = file.getOriginalFilename();   //获取原文件名
             try {
-                if (!FileUtil.isDirectory(filePath)) {
-                    FileUtil.mkdir(filePath);
+                if (!FileUtil.isDirectory(filePath)) {     //判断文件夹是否存在
+                    FileUtil.mkdir(filePath);           //不存在则创建新文件夹
                 }
                 // 文件存储形式：时间戳-文件名
+                //将上传文件的字节内容写入到指定路径下，文件名形式为时间戳-文件名。
                 FileUtil.writeBytes(file.getBytes(), filePath + flag + "-" + fileName);
                 System.out.println(fileName + "--上传成功");
+                //线程休眠
                 Thread.sleep(1L);
             } catch (Exception e) {
                 System.err.println(fileName + "--文件上传失败");
@@ -43,6 +46,7 @@ public class FileController {
             return Result.success(flag);
         }
     }
+
 
 
     /**

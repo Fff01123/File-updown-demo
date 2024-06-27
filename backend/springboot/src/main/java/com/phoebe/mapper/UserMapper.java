@@ -4,7 +4,6 @@ import com.phoebe.entity.Params;
 import com.phoebe.entity.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository
@@ -26,7 +25,7 @@ public interface UserMapper {
     User findByNameAndPassword(@Param("name") String name, @Param("password") String password);
 
 
-    @Insert("insert into user(id,name,password,sex,age,phone) values(#{id},#{name},#{password},#{sex},#{age},#{phone})")
+    @Insert("insert into user(id,name,password,sex,age,phone,role) values(#{id},#{name},#{password},#{sex},#{age},#{phone},#{role})")
     int register(User user); //添加user
 
 
@@ -35,7 +34,7 @@ public interface UserMapper {
 
 
 
-    @Update("update user set name = #{user.name}, password = #{user.password}, sex = #{user.sex}, age = #{user.age}, phone = #{user.phone} where id = #{user.id}")
+    @Update("update user set name = #{user.name}, password = #{user.password}, sex = #{user.sex}, age = #{user.age}, phone = #{user.phone},role = #{user.role} where id = #{user.id} ")
     void update(@Param("user") User user);
 
 

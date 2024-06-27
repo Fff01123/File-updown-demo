@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="backend">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/springboot/src/main/java" />
+      <root url="file://$PROJECT_DIR$/springboot/src/test/java" />
+    </SOURCES>
+  </library>
+</component>

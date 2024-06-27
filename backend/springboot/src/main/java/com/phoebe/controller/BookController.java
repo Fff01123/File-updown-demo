@@ -23,7 +23,6 @@ public class BookController {
     private Result findBook(Params params){
         PageInfo<Book> books = bookService.findBook(params);
         return Result.success(books);
-
     }
 
     @GetMapping()
