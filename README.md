@@ -12,11 +12,14 @@ JWT登录鉴权
 开发环境
 后台基于maven使用Springboot框架整合(Spring、SpringMVC、Springboot、Mybatis)
 前端页面样式基于vue+elementui框架，jquery。
-ide：Intellij IDEA 2021.3.2
+idea：Intellij IDEA 2021.3.2
 java版本：jdk 17
 数据库版本：mysql 5.7.18-1
 数据库设计
 有用户、文件、图书、三张表
 
 简单展示：
+![image](https://github.com/user-attachments/assets/aae18e55-96cd-4fbd-bb71-db64d9c173ee)
+![image](https://github.com/user-attachments/assets/5142ad89-285d-4909-a54b-387e9b127b4b)
+
 
